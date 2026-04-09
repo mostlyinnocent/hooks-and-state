@@ -1,0 +1,20 @@
+.note{
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    overflow: hidden;
+    background-color: ivory;
+    color: rgb(53, 53, 53);
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 20px;
+
+    position: relative;
+}

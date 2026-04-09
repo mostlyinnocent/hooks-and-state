@@ -1,0 +1,43 @@
+.palette{
+    width: 50px;
+    transform: scaleY(0);
+    transform-origin: top;
+    background-color: #f4f4f4;
+    border-radius: 100px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.8s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 8px;
+    gap: 1rem;
+   
+}
+
+.palette.open{
+    transform: scaleY(1);
+}
+
+.palette-btn{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.palette-btn.visible{
+    opacity: 1;
+}
+
+.palette-btn:hover{
+    transform: scale(1.2);
+}
