@@ -1,57 +1,62 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const initAuthState = {
+export const AuthContext = createContext()
+
+const initialAuthState = {
   isAuthenticated: false,
   user: null
 }
 
-
-export const Context = createContext();
-
-export function AuthContextProvider( {children} ) {
+export function AuthContextProvider({children}){
 
   const [authState, setAuthState] = useState(()=>{
     const saved = localStorage.getItem('authState');
-    return saved ? JSON.parse(saved) : initAuthState;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('authState', JSON.stringify(authState));
-  },[authState])
-
-  const [users, setUsers] = useState(()=>{
-    const savedUser = localStorage.getItem('users');
-    return savedUser ? JSON.parse(savedUser) : [];
+    return saved ? JSON.parse(saved) : initialAuthState;
   });
 
   useEffect(()=>{
-    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem("authState", JSON.stringify(authState));
+  },[authState]);
+
+  const [users, setUser] = useState(()=>{
+    const saved = localStorage.getItem('users');
+    return saved ? JSON.parse(saved) : [];
+  })
+
+  useEffect(()=>{
+    localStorage.setItem('users', JSON.stringify(users))
   },[users]);
 
-  function createAccount(formData){
+  function signUp(formData){
     const newUser = {
       name: formData.name,
       email: formData.email,
       password: formData.password
     }
-    setUsers(prev => [...prev, newUser]);
-    setAuthState({
-      isAuthenticated: true,
-      user: {
-        name: newUser.name,
-        email: newUser.email
-      }
-    })
-  };
 
-  return (
-    <Context.Provider value={{authState, users, createAccount}}>
-      {children}
-    </Context.Provider>
-  )
+    setUser(prev=>[...prev, newUser]);
+
+    setAuthState(
+      {
+        isAuthenticated: true,
+        users:{
+          name: newUser.name,
+          email: newUser.email
+        }
+      }
+    )
+  }
+
+return (
+
+  <AuthContext.Provider value={{authState, users, signUp}}>
+    {children}
+  </AuthContext.Provider>
+
+)
 
 }
 
-export function useAuth(){
-  return useContext(Context);
+export function useAuthContext(){
+  return useContext(AuthContext);
 }
