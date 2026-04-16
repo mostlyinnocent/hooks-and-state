@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+}
+
+body{
+  background-image: url('./images/main-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+:root{
+  --bg:#fcf4be;
+  --card:#fcf4be;
+  --color: rgba(28, 28, 28,1);
+  --input:#faf9f6;
+  --input-focus: #ffa803;
+  --button-hover: #0f0f0f;
+  --button-bg: #1c1c1c;
+  --button-text: #ffffff;
+  
+}
