@@ -14,10 +14,7 @@ function LoginWindow({children}) {
           <p className='text-white text-3xl font-semibold'>AI-powered workspace for builders, developers, and creators.</p>
         </div>
       </div>
-      <form className='flex h-[100%] w-[50%] p-[20px] flex flex-col items-start justify-center gap-4'>
-        <h1 className='font-bold text-5xl mb-[20px]'>Sign Up</h1>
         {children}
-      </form>
     </div>
   )
 }
