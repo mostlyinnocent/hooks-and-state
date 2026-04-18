@@ -19,8 +19,7 @@ function App() {
         <LoginWindow>
           {
             authState.isAuthenticated
-            ? <WelcomeWindow>
-            </WelcomeWindow>
+            ? <WelcomeWindow setToast={setToast}></WelcomeWindow>
             : <CreateAccountForm setToast={setToast}></CreateAccountForm>
           }
         </LoginWindow>

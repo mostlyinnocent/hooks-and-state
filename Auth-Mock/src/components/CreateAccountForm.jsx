@@ -55,7 +55,7 @@ function CreateAccountForm({ setToast }) {
   }
 
   return (
-    <form className='flex h-[100%] w-[50%] p-[20px] flex flex-col items-start justify-center gap-4'>
+    <form className='flex h-[100%] w-[70%] p-[20px] flex flex-col items-start justify-center gap-4'>
       <h1 className='font-bold text-5xl mb-[20px]'>Sign Up</h1>
       <InputField value={formData.name} field={"name"} handleFormData={handleFormData} label={'Username'} placeholder={'Enter username'}/>
       <InputField value={formData.email} field={"email"} handleFormData={handleFormData} label={'Email'} placeholder={'example123@email.com'}/>

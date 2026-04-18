@@ -3,9 +3,25 @@ import LogoutButton from './LogoutButton'
 import { useAuthContext } from '../contexts/AuthContext'
 
 
-function WelcomeWindow() {
+function WelcomeWindow({setToast}) {
 
   const {logOut} = useAuthContext();
+
+
+  function showToast(message){
+
+    setToast(message)
+
+    setTimeout(()=>{
+      setToast(null);
+    },3000);
+
+  }
+
+  function handlelogOut(){
+    logOut();
+    showToast("You have been logged out.")
+  }
 
   return (
     <div className='h-[100%] w-[70%] bg-gradient-to-t from-orange-400 to-yellow-100 flex flex-col items-start  rounded-xl pt-10 pl-5 gap-2 relative'>
@@ -24,7 +40,7 @@ function WelcomeWindow() {
         <span className='transition-transform hover:translate-y-[-2px]'>k</span>
         <div className="h-[30px] w-[30px] flex bg-white mask-[url('/stars.png')] mask-no-repeat mask-contain"></div>
       </div>
-      <LogoutButton handlelogOut={logOut}></LogoutButton>
+      <LogoutButton handlelogOut={handlelogOut}></LogoutButton>
     </div>
   )
 }
