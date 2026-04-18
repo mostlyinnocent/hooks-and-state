@@ -6,6 +6,7 @@ import Toast from './toasts/Toast'
 import WelcomeWindow from './components/WelcomeWindow'
 import { useAuthContext } from './contexts/AuthContext'
 import LogoutButton from './components/LogoutButton'
+import LoginForm from './components/LoginForm'
 
 function App() {
   const [toast, setToast] = useState(null);
@@ -17,11 +18,12 @@ function App() {
       {toast && <Toast message={toast}></Toast>}
       <MainLayout>
         <LoginWindow>
-          {
+          {/* {
             authState.isAuthenticated
             ? <WelcomeWindow setToast={setToast}></WelcomeWindow>
             : <CreateAccountForm setToast={setToast}></CreateAccountForm>
-          }
+          } */}
+          <LoginForm></LoginForm>
         </LoginWindow>
       </MainLayout>
     </>
