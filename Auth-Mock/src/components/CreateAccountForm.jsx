@@ -51,6 +51,11 @@ function CreateAccountForm({ setToast }) {
 
     signUp(formData);
     showToast("Your account has been created.")
+    setWelcomeWindow()
+  }
+
+  function showWelcomeWindow(){
+    setWelcomeWindow(true);
   }
 
 
