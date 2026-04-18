@@ -47,9 +47,16 @@ export function AuthContextProvider({children}){
     )
   }
 
+  function logOut(){
+    setAuthState({
+      isAuthenticated:false,
+      user: null
+    })
+  }
+
 return (
 
-  <AuthContext.Provider value={{authState, users, signUp}}>
+  <AuthContext.Provider value={{authState, users, signUp, logOut}}>
     {children}
   </AuthContext.Provider>
 

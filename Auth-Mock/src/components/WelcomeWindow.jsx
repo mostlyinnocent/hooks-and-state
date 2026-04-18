@@ -1,7 +1,12 @@
 import React from 'react'
-import exitIcon from '../icons/exit.png'
+import LogoutButton from './LogoutButton'
+import { useAuthContext } from '../contexts/AuthContext'
+
 
 function WelcomeWindow() {
+
+  const {logOut} = useAuthContext();
+
   return (
     <div className='h-[100%] w-[70%] bg-gradient-to-t from-orange-400 to-yellow-100 flex flex-col items-start  rounded-xl pt-10 pl-5 gap-2 relative'>
       <span className='font-extrabold text-4xl font-sans mt-30'>Welcome,</span>
@@ -19,9 +24,7 @@ function WelcomeWindow() {
         <span className='transition-transform hover:translate-y-[-2px]'>k</span>
         <div className="h-[30px] w-[30px] flex bg-white mask-[url('/stars.png')] mask-no-repeat mask-contain"></div>
       </div>
-      <div className='h-5 w-5 flex items-center justify-center absolute bottom-5 right-3 cursor-pointer transition-transform hover:scale-105 active:translate-y-1'>
-        <img className='h-full w-full object-cover block' src={exitIcon} alt="" />
-      </div>
+      <LogoutButton handlelogOut={logOut}></LogoutButton>
     </div>
   )
 }
