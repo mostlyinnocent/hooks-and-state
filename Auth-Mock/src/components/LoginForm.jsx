@@ -49,8 +49,12 @@ function LoginForm({setToast}) {
       return
     }
 
-    login(formData);
-    showToast("You are logged in.");
+    const loginSuccess = login(formData);
+    if(loginSuccess){
+      showToast("You are logged in.");
+    } else {
+      showToast("Invalid email or password.");
+    }
   }
 
   return (
