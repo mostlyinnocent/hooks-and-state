@@ -54,13 +54,28 @@ export function AuthContextProvider({children}){
     })
   }
 
+  function login(formData){
+
+    const matchedUser = users.find(user => formData.email === user.email && formData.password === user.password);
+
+    if(!matchedUser){
+      return false;
+    } 
+    setAuthState({
+        isAuthenticated: true,
+        user: matchedUser
+    })
+    return true;
+  }  
+
 return (
 
-  <AuthContext.Provider value={{authState, users, signUp, logOut}}>
+  <AuthContext.Provider value={{authState, users, signUp, logOut, login}}>
     {children}
   </AuthContext.Provider>
 
 )
+
 
 }
 

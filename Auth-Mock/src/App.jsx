@@ -25,7 +25,7 @@ function App() {
             : (
               <Routes>
                 <Route path='/signup' element={<CreateAccountForm setToast={setToast}></CreateAccountForm>}></Route>
-                <Route path='/login' element={<LoginForm ></LoginForm>}></Route>
+                <Route path='/login' element={<LoginForm setToast={setToast}></LoginForm>}></Route>
               </Routes>
             )
           }
