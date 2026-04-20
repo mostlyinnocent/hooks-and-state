@@ -19,8 +19,10 @@ function WelcomeWindow({setToast}) {
   }
 
   function handlelogOut(){
-    logOut();
-    showToast("You have been logged out.")
+    setTimeout(() => {
+      logOut();
+      showToast("You have been logged out.");      
+    }, 1500);
   }
 
   return (

@@ -42,16 +42,20 @@ function CreateAccountForm({ setToast }) {
 
   function createAccount(){
 
-    const error = validateForm(formData);
+    setTimeout(() => {
 
-    if(error){
-      showToast(error);
-      return
-    }
+      const error = validateForm(formData);
 
-    signUp(formData);
-    showToast("Your account has been created.")
-  }
+      if(error){
+        showToast(error);
+        return
+      }
+
+      signUp(formData);
+      showToast("Your account has been created.");
+
+    },1500);
+  };
 
   return (
     <div className='flex h-[100%] w-[70%] p-[20px] flex flex-col items-start justify-center gap-4'>

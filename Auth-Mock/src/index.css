@@ -34,5 +34,21 @@ body{
   --button-hover: #0f0f0f;
   --button-bg: #1c1c1c;
   --button-text: #ffffff;
-  
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animate-roate-border {
+  animation: border-rotate 3s linear infinite;
 }

@@ -42,19 +42,25 @@ function LoginForm({setToast}) {
   }
 
   function handleLogin(){
-    const error = validateLogin(formData);
 
-    if(error){
-      showToast(error);
-      return
-    }
+    setTimeout(() => {
 
-    const loginSuccess = login(formData);
-    if(loginSuccess){
-      showToast("You are logged in.");
-    } else {
-      showToast("Invalid email or password.");
-    }
+      const error = validateLogin(formData);
+
+      if(error){
+        showToast(error);
+        return
+      }
+
+      const loginSuccess = login(formData);
+      if(loginSuccess){
+        showToast("You are logged in.");
+      } else {
+        showToast("Invalid email or password");
+      }
+      
+    }, 1500);
+
   }
 
   return (
