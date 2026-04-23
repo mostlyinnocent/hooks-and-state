@@ -1,0 +1,5 @@
+<svg width="100%" viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Location icon</title>
+  <desc>A solid white location pin icon with transparent background</desc>
+  <path d="M340 60 C290 60 250 100 250 150 C250 210 340 320 340 320 C340 320 430 210 430 150 C430 100 390 60 340 60 Z M340 185 C319 185 302 168 302 147 C302 126 319 109 340 109 C361 109 378 126 378 147 C378 168 361 185 340 185 Z" fill="white" fill-rule="evenodd"/>
+</svg>
