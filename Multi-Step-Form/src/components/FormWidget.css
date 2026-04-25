@@ -1,0 +1,52 @@
+:root {
+	--gradient-shadow: linear-gradient(
+		95deg,
+    #aaff00,
+    #50d014,
+    #08cc53,
+    #278943,
+    #aaff00,
+    #50d014,
+    #08cc53,
+    #278943
+	);
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.widget:before,
+.widget:after {
+	content: "";
+	position: absolute;
+  border-radius: 8px;
+	top: -2px;
+	left: -2px;
+	background: var(--gradient-shadow);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: animate 20s linear infinite;
+}
+
+.widget:after {
+	filter: blur(20px);
+}
+
+@keyframes animate {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 300% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
