@@ -3,9 +3,10 @@ import FormWidget from "./components/FormWidget"
 import LeftWindow from "./components/LeftWindow"
 import MainLayout from "./components/MainLayout"
 import NextButton from "./components/NextButton"
-import PersonalInfoWindow from "./components/PersonalInfoWindow"
 import ProgressSetp from "./components/ProgressSetp"
 import RightWIndow from "./components/RightWIndow"
+import AddressInfoWindow from "./pages/AddressInfoWindow"
+import PersonalInfoWindow from "./pages/PersonalInfoWindow"
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
             <ProgressSetp></ProgressSetp>
           </LeftWindow>
           <RightWIndow>
-            <PersonalInfoWindow></PersonalInfoWindow>
+            
+            {/* <PersonalInfoWindow></PersonalInfoWindow> */}
+            <AddressInfoWindow></AddressInfoWindow>
+
           </RightWIndow>
         </FormWidget>
       </MainLayout>
