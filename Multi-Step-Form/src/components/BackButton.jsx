@@ -1,8 +1,8 @@
 import React from 'react'
 
-function BackButton() {
+function BackButton({onClick, disabled}) {
   return (
-    <button className='bg-neutral-100/10 border border-neutral-100/20 h-10 w-30 rounded-3xl text-neutral-300'>
+    <button onClick={onClick} disabled={disabled} className='bg-neutral-100/10 border border-neutral-100/20 h-10 w-30 rounded-3xl text-neutral-300 transition-all cursor-pointer active:translate-y-[1px]'>
       <span>Back</span>
     </button>
   )

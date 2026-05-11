@@ -1,11 +1,9 @@
 :root {
 	--gradient-shadow: linear-gradient(
 		95deg,
-    #aaff00,
     #50d014,
     #08cc53,
     #278943,
-    #aaff00,
     #50d014,
     #08cc53,
     #278943
@@ -36,7 +34,7 @@ body {
 }
 
 .widget:after {
-	filter: blur(20px);
+	filter: blur(10px);
 }
 
 @keyframes animate {
